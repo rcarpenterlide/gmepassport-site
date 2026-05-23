@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GME Passport | Reusable VOT</title>
+  <style>
+    :root {
+      --bg: #f7f6f2;
+      --ink: #1f2933;
+      --muted: #5f6c7b;
+      --accent: #2f5d62;
+      --accent-dark: #24494d;
+      --soft: #e9efee;
+      --card: #ffffff;
+      --line: #ddd7ce;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.5;
+    }
+    header {
+      padding: 24px 7vw;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      font-weight: 900;
+      letter-spacing: -0.03em;
+      font-size: 1.25rem;
+    }
+    nav a {
+      color: var(--ink);
+      text-decoration: none;
+      margin-left: 20px;
+      font-size: 0.95rem;
+    }
+    .hero {
+      padding: 70px 7vw 80px;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 50px;
+      align-items: center;
+    }
+    .eyebrow {
+      display: inline-block;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: var(--soft);
+      color: var(--accent-dark);
+      font-weight: 800;
+      font-size: 0.82rem;
+      margin-bottom: 18px;
+    }
+    h1 {
+      margin: 0 0 18px;
+      font-size: clamp(2.8rem, 6vw, 5.2rem);
+      line-height: 0.96;
+      letter-spacing: -0.075em;
+    }
+    .subhead {
+      font-size: 1.22rem;
+      color: var(--muted);
+      max-width: 720px;
+      margin-bottom: 18px;
+    }
+    .tagline {
+      font-weight: 900;
+      color: var(--accent-dark);
+      font-size: 1.22rem;
+      margin: 18px 0 28px;
+    }
+    .actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 22px;
+    }
+    .button {
+      display: inline-block;
+      border: 1px solid var(--accent);
+      border-radius: 12px;
+      padding: 14px 22px;
+      font-weight: 900;
+      text-decoration: none;
+    }
+    .primary { background: var(--accent); color: white; }
+    .secondary { color: var(--accent-dark); }
+    .chips { display: flex; gap: 10px; flex-wrap: wrap; }
+    .chip {
+      background: var(--soft);
+      color: var(--accent-dark);
+      padding: 9px 13px;
+      border-radius: 999px;
+      font-weight: 800;
+      font-size: 0.92rem;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 26px;
+      box-shadow: 0 18px 55px rgba(31, 41, 51, 0.08);
+    }
+    .card h3 { margin: 0 0 12px; font-size: 1.2rem; }
+    .check {
+      display: flex;
+      gap: 12px;
+      border-top: 1px solid var(--line);
+      padding: 13px 0;
+      color: var(--muted);
+    }
+    .check:first-of-type { border-top: none; }
+    .check span { color: var(--accent); font-weight: 900; }
+    .check strong { color: var(--ink); }
+    section { padding: 68px 7vw; }
+    .section-header { max-width: 760px; margin-bottom: 32px; }
+    h2 {
+      margin: 0 0 16px;
+      font-size: clamp(2rem, 4vw, 3.25rem);
+      line-height: 1.02;
+      letter-spacing: -0.055em;
+    }
+    .section-header p { color: var(--muted); font-size: 1.08rem; }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+    .feature {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 22px;
+    }
+    .feature h3 { margin: 0 0 8px; }
+    .feature p { margin: 0; color: var(--muted); }
+    .workflow {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 14px;
+    }
+    .step {
+      background: var(--soft);
+      border-radius: 18px;
+      padding: 18px;
+      min-height: 158px;
+    }
+    .step strong {
+      display: block;
+      color: var(--accent-dark);
+      margin-bottom: 8px;
+    }
+    .quote {
+      background: var(--accent);
+      color: white;
+      border-radius: 28px;
+      padding: 38px;
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      line-height: 1.05;
+      letter-spacing: -0.055em;
+      font-weight: 900;
+    }
+    footer {
+      padding: 34px 7vw;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.92rem;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+    @media (max-width: 900px) {
+      header { flex-direction: column; align-items: flex-start; gap: 12px; }
+      nav a { margin-left: 0; margin-right: 18px; }
+      .hero, .grid, .workflow { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo">GME Passport</div>
+  <nav>
+    <a href="#why">Why</a>
+    <a href="#workflow">Workflow</a>
+    <a href="#pilot">Pilot</a>
+  </nav>
+</header>
+
+<main>
+  <section class="hero">
+    <div>
+      <div class="eyebrow">Reusable physician training verification</div>
+      <h1>Complete one comprehensive VOT per graduate.</h1>
+      <p class="subhead">One reusable verification-of-training packet. Graduate-controlled access. Better information. Faster credentialing.</p>
+      <div class="tagline">Upload once, automated forever.</div>
+      <div class="actions">
+        <a class="button primary" href="mailto:hello@gmepassport.com?subject=GME%20Passport%20Pilot%20Interest">Join Founding Pilot</a>
+        <a class="button secondary" href="#workflow">See Workflow</a>
+      </div>
+      <div class="chips">
+        <div class="chip">Less work</div>
+        <div class="chip">Better information</div>
+        <div class="chip">Faster credentialing</div>
+      </div>
+    </div>
+
+    <aside class="card">
+      <h3>One comprehensive VOT can include:</h3>
+      <div class="check"><span>✓</span><div><strong>Training dates</strong><br>Residency + internship verification when relevant</div></div>
+      <div class="check"><span>✓</span><div><strong>Competency summary</strong><br>Mapped to ACGME domains</div></div>
+      <div class="check"><span>✓</span><div><strong>Board status</strong><br>Eligibility or certification, updated yearly</div></div>
+      <div class="check"><span>✓</span><div><strong>Reference + permissions</strong><br>Graduate-controlled access</div></div>
+    </aside>
+  </section>
+
+  <section id="why">
+    <div class="section-header">
+      <h2>The same information. One comprehensive VOT.</h2>
+      <p>Built from common verification-of-training requests to reduce repetitive submissions, reminders, and administrative work.</p>
+    </div>
+
+    <div class="grid">
+      <div class="feature">
+        <h3>Programs</h3>
+        <p><strong>One form. One place. One time.</strong></p>
+      </div>
+      <div class="feature">
+        <h3>Graduates</h3>
+        <p><strong>Controlled access. Faster credentialing.</strong></p>
+      </div>
+      <div class="feature">
+        <h3>Employers</h3>
+        <p><strong>Comprehensive. Standardized. Downloadable.</strong></p>
+      </div>
+    </div>
+  </section>
+
+  <section id="workflow">
+    <div class="section-header">
+      <h2>Tokens in. Push approval out.</h2>
+      <p>Programs issue registration tokens. Graduates activate accounts. Employers request access. Graduates approve release. Everyone gets a closed-loop receipt.</p>
+    </div>
+
+    <div class="workflow">
+      <div class="step"><strong>1. Token issued</strong>Program coordinator sends secure registration token.</div>
+      <div class="step"><strong>2. Graduate activates</strong>Trainee creates account and confirms identifiers.</div>
+      <div class="step"><strong>3. Employer requests</strong>Hospital enters name + NPI/DOB.</div>
+      <div class="step"><strong>4. Push approval</strong>Graduate approves release.</div>
+      <div class="step"><strong>5. VOT delivered</strong>Packet downloads; program, graduate, and employer are notified.</div>
+    </div>
+  </section>
+
+  <section>
+    <div class="quote">Less work. Better information. Faster credentialing.</div>
+  </section>
+
+  <section id="pilot">
+    <div class="section-header">
+      <h2>Founding Pilot Program</h2>
+      <p>Help shape a reusable, education-informed VOT standard.</p>
+    </div>
+
+    <div class="grid">
+      <div class="feature">
+        <h3>Contribute workflows</h3>
+        <p>Real-world VOT requests and credentialing pain points.</p>
+      </div>
+      <div class="feature">
+        <h3>Measure impact</h3>
+        <p>Time saved, reminders avoided, and missing-information requests.</p>
+      </div>
+      <div class="feature">
+        <h3>Pilot free</h3>
+        <p>Complimentary pilot participation. Preferred founding pricing later.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div>© 2026 GME Passport</div>
+  <div>hello@gmepassport.com</div>
+</footer>
+
+</body>
+</html>
